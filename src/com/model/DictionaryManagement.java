@@ -1,10 +1,12 @@
-package Dictionary;
+package com.model;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Scanner;
+
+import com.dvt.model.Laptop;
 import com.file.FileManager;
 
 public class DictionaryManagement {
@@ -32,14 +34,19 @@ public class DictionaryManagement {
 		this.scanner = scanner;
 		fileManager = new FileManager(arrWord);
 	}
-
+	public void addDefault() {
+		if (arrWord != null) {
+			arrWord.add(new Word("1", "Dell A"));
+			arrWord.add(new Word("2", "Dell B"));
+		}
+	}
 	// thêm từ
 	public void insertFromCommandline() {
 		System.out.println("-----Add a new word-----");
 		System.out.println("Nhập từ mới: ");
 		String wordTarget = scanner.nextLine();
 		Word word = new Word(wordTarget);
-		//contains so sánh trùng từ đã tồn tại thì không cho thêm
+		// contains so sánh trùng từ đã tồn tại thì không cho thêm
 		if (arrWord.contains(word)) {
 			System.out.println("Thêm thất bại! Từ đã tồn tại");
 			return;
@@ -88,12 +95,20 @@ public class DictionaryManagement {
 
 	// xuất ra file
 	public void dictionaryExportToFile() {
-		//method
+		// fileManager.saveWordAsObject();
+		fileManager.saveFileAsTextByBufferWrite();
+		// fileManager.saveWordAsTextByRandomAccessFile();
+		System.out.println("Save file successfully");
 	}
 
 	// thêm từ file
 	public void insertFromFile() {
-		//method
+		arrWord.clear();
+//		arrWord.addAll(fileManager.readWordAsObject());
+		arrWord.addAll(fileManager.readWordAsTextByBufferReader());
+		// arrWord.addAll(fileManager.readWordAsTextByRandomAccessFile());
+		System.out.println("Read file successfully");
+//		printListWord();
 	}
 
 	public void dictionarySearcher() {
@@ -109,11 +124,21 @@ public class DictionaryManagement {
 	}
 
 	public void dictionarySearcher2() {
-		//search with startwith string
+		List<String> MySortStrings = new ArrayList<String>();
+		Word word;
+		System.out.println("Nhập từ cần tra");
+		String input = scanner.nextLine();
+		for (int i = 0; i < arrWord.size(); i++) {
+			word = arrWord.get(i);
+			if (word.getWordTarget().startsWith(input)) {
+				MySortStrings.add(word.getWordTarget());
+			}
+		}
+		System.out.println(MySortStrings);
 	}
 
 	public void printListWord() {
-		//hàm coparator xử lý sắp xếp theo tên trước khi in
+		// hàm coparator xử lý sắp xếp theo tên trước khi in
 		Comparator<Word> compare = new Comparator<Word>() {
 
 			@Override

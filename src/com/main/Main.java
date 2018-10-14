@@ -9,7 +9,8 @@ public class Main {
 		try {
 			Scanner scanner = new Scanner(System.in);
 			DictionaryManagement dictionaryManagement = new DictionaryManagement(scanner);
-			//insertFromFile
+//			dictionaryManagement.insertFromFile();
+			dictionaryManagement.addDefault();
 			do {
 				System.out.println("-------------Chương trình từ điển-------------");
 				System.out.println("1.Thêm từ");
@@ -32,13 +33,14 @@ public class Main {
 					dictionaryManagement.deleteWordFromCommandline();
 					break;
 				case 4:
-					//xuất ra file
+					dictionaryManagement.dictionaryExportToFile();
 					break;
 				case 5:
-					//import từ file
+					dictionaryManagement.insertFromFile();
 					break;
 				case 6:
-					dictionaryManagement.dictionarySearcher();
+//					dictionaryManagement.dictionarySearcher();
+					dictionaryManagement.dictionarySearcher2();
 					break;
 				case 7:
 					dictionaryManagement.printListWord();

@@ -1,8 +1,9 @@
-package Dictionary;
+package com.model;
 
 import java.io.Serializable;
 
-public class Word {
+public class Word implements Serializable{
+	private static final long serialVersionUID = 1L;
 	private String wordTarget;
 	private String wordExplain;
 
