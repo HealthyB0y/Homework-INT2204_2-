@@ -9,8 +9,7 @@ public class Main {
 		try {
 			Scanner scanner = new Scanner(System.in);
 			DictionaryManagement dictionaryManagement = new DictionaryManagement(scanner);
-//			dictionaryManagement.insertFromFile();
-			dictionaryManagement.addDefault();
+			dictionaryManagement.insertFromFile();
 			do {
 				System.out.println("-------------Chương trình từ điển-------------");
 				System.out.println("1.Thêm từ");

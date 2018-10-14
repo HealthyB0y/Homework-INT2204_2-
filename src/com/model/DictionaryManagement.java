@@ -6,7 +6,6 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Scanner;
 
-import com.dvt.model.Laptop;
 import com.file.FileManager;
 
 public class DictionaryManagement {
@@ -34,19 +33,13 @@ public class DictionaryManagement {
 		this.scanner = scanner;
 		fileManager = new FileManager(arrWord);
 	}
-	public void addDefault() {
-		if (arrWord != null) {
-			arrWord.add(new Word("1", "Dell A"));
-			arrWord.add(new Word("2", "Dell B"));
-		}
-	}
+
 	// thêm từ
 	public void insertFromCommandline() {
 		System.out.println("-----Add a new word-----");
 		System.out.println("Nhập từ mới: ");
 		String wordTarget = scanner.nextLine();
 		Word word = new Word(wordTarget);
-		// contains so sánh trùng từ đã tồn tại thì không cho thêm
 		if (arrWord.contains(word)) {
 			System.out.println("Thêm thất bại! Từ đã tồn tại");
 			return;
@@ -138,7 +131,6 @@ public class DictionaryManagement {
 	}
 
 	public void printListWord() {
-		// hàm coparator xử lý sắp xếp theo tên trước khi in
 		Comparator<Word> compare = new Comparator<Word>() {
 
 			@Override
