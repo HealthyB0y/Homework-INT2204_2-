@@ -17,8 +17,9 @@ public class Main {
 				System.out.println("3.Delete word");
 				System.out.println("4.Export to file");
 				System.out.println("5.Import from file");
-				System.out.println("6.Search");
-				System.out.println("7.Print list");
+				System.out.println("6.Lookup commandline");
+				System.out.println("7.Search");
+				System.out.println("8.Print list");
 				System.out.println(" ----------------------------------------------------");
 				int choice = Integer.parseInt(scanner.nextLine());
 				switch (choice) {
@@ -38,10 +39,12 @@ public class Main {
 					dictionaryManagement.insertFromFile();
 					break;
 				case 6:
-//					dictionaryManagement.dictionarySearcher();
-					dictionaryManagement.dictionarySearcher2();
+					dictionaryManagement.dictionaryLookup();
 					break;
 				case 7:
+					dictionaryManagement.dictionarySearcher2();
+					break;
+				case 8:
 					dictionaryManagement.printListWord();
 					break;
 				default:

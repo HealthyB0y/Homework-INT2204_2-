@@ -104,7 +104,7 @@ public class DictionaryManagement {
 //		printListWord();
 	}
 
-	public void dictionarySearcher() {
+	public void dictionaryLookup() {
 		System.out.println("Search: ");
 		String wordTarget = scanner.nextLine();
 		Word word = new Word(wordTarget);
