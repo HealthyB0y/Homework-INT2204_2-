@@ -11,14 +11,14 @@ public class Main {
 			DictionaryManagement dictionaryManagement = new DictionaryManagement(scanner);
 			dictionaryManagement.insertFromFile();
 			do {
-				System.out.println("-------------Chương trình từ điển-------------");
-				System.out.println("1.Thêm từ");
-				System.out.println("2.Sửa từ");
-				System.out.println("3.Xóa từ");
-				System.out.println("4.Xuất ra file");
-				System.out.println("5.Thêm từ file");
-				System.out.println("6.Tìm kiếm từ");
-				System.out.println("7.In danh sách từ");
+				System.out.println("-------------Dictionary-------------");
+				System.out.println("1.Add new word");
+				System.out.println("2.Edit word");
+				System.out.println("3.Delete word");
+				System.out.println("4.Export to file");
+				System.out.println("5.Import from file");
+				System.out.println("6.Search");
+				System.out.println("7.Print list");
 				System.out.println(" ----------------------------------------------------");
 				int choice = Integer.parseInt(scanner.nextLine());
 				switch (choice) {
@@ -49,7 +49,7 @@ public class Main {
 				}
 			} while (true);
 		} catch (Exception e) {
-			System.out.println("Có lỗi bất thường!");
+			System.out.println("Error unexpected!");
 		}
 	}
 }

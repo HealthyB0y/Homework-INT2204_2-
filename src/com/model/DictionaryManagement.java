@@ -37,18 +37,18 @@ public class DictionaryManagement {
 	// thêm từ
 	public void insertFromCommandline() {
 		System.out.println("-----Add a new word-----");
-		System.out.println("Nhập từ mới: ");
+		System.out.println("Add a word ");
 		String wordTarget = scanner.nextLine();
 		Word word = new Word(wordTarget);
 		if (arrWord.contains(word)) {
-			System.out.println("Thêm thất bại! Từ đã tồn tại");
+			System.out.println("Add new failed! Word already exist");
 			return;
 		}
-		System.out.println("Thêm từ Tiếng Anh: ");
+		System.out.println("Add English Word: ");
 		String wordTargetNew = scanner.nextLine();
 		word.setWordTarget(wordTargetNew);
 		;
-		System.out.println("Thêm giải thích Tiếng Việt");
+		System.out.println("Add Vietnamese mean:");
 		String wordExplainNew = scanner.nextLine();
 		word.setWordExplain(wordExplainNew);
 		arrWord.add(word);
@@ -57,14 +57,14 @@ public class DictionaryManagement {
 
 	public void editFromCommandline() {
 		System.out.println("-----Edit a word-----");
-		System.out.println("Nhập từ cần sửa: ");
+		System.out.println("Add a word: ");
 		String wordTarget = scanner.nextLine();
 		Word word = new Word(wordTarget);
 		if (!arrWord.contains(word)) {
-			System.out.println("Từ không tồn tại");
+			System.out.println("Word not already exist");
 			return;
 		}
-		System.out.println("Nhập sửa nghĩa tiếng việt: ");
+		System.out.println("Fix Vietnamese mean: ");
 		String wordExplain = scanner.nextLine();
 		word.setWordExplain(wordExplain);
 		int index = arrWord.indexOf(word);
@@ -75,14 +75,14 @@ public class DictionaryManagement {
 	// xóa từ
 	public void deleteWordFromCommandline() {
 		System.out.println("-----Delete a word-----");
-		System.out.println("Nhập từ cần xóa: ");
+		System.out.println("Add a word to delete ");
 		String wordTarget = scanner.nextLine();
 		Word word = new Word(wordTarget);
 		if (arrWord.contains(word)) {
 			arrWord.remove(word);
-			System.out.println("-----Xóa thành công-----");
+			System.out.println("-----Delete successfully-----");
 		} else {
-			System.out.println("Từ không tồn tại");
+			System.out.println("Word not already exist");
 		}
 	}
 
@@ -105,26 +105,28 @@ public class DictionaryManagement {
 	}
 
 	public void dictionarySearcher() {
-		System.out.println("Nhập từ cần tra: ");
+		System.out.println("Search: ");
 		String wordTarget = scanner.nextLine();
 		Word word = new Word(wordTarget);
 		if (arrWord.contains(word)) {
 			int index = arrWord.indexOf(word);
 			System.out.println(arrWord.get(index).toString());
 		} else {
-			System.out.println("Không tồn tại");
+			System.out.println("Not already exist");
 		}
 	}
 
 	public void dictionarySearcher2() {
 		List<String> MySortStrings = new ArrayList<String>();
 		Word word;
-		System.out.println("Nhập từ cần tra");
+		System.out.println("Search");
 		String input = scanner.nextLine();
 		for (int i = 0; i < arrWord.size(); i++) {
 			word = arrWord.get(i);
 			if (word.getWordTarget().startsWith(input)) {
 				MySortStrings.add(word.getWordTarget());
+			} else {
+				System.out.println("Not already exist");
 			}
 		}
 		System.out.println(MySortStrings);
@@ -146,7 +148,7 @@ public class DictionaryManagement {
 			}
 		};
 		Collections.sort(arrWord, compare);
-		System.out.println("Danh sách các từ:");
+		System.out.println("List word:");
 		for (int i = 0; i < arrWord.size(); i++) {
 			System.out.println(arrWord.get(i));
 		}
