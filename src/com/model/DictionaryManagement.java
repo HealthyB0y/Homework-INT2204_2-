@@ -125,8 +125,6 @@ public class DictionaryManagement {
 			word = arrWord.get(i);
 			if (word.getWordTarget().startsWith(input)) {
 				MySortStrings.add(word.getWordTarget());
-			} else {
-				System.out.println("Not already exist");
 			}
 		}
 		System.out.println(MySortStrings);
