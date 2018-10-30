@@ -1,0 +1,11 @@
+- Cách tìm ki?m t? :
+Hãy di?n t? mà b?n c?n d?ch vào ô tr?ng d?u tiên và sau dó ?n enter d? tìm ki?m t? dó.
+Ho?c b?n có th? vi?t 1 vài kí t? d?u tiên c?a t? dó vào ô tr?ng và nh?n enter.
+Phía bên tay trái c?a giao di?n s? hi?n th? các t? g?i ý có th? là t? b?n c?n tìm.
+- Cách thêm t? :
+Nh?n t? ti?ng anh vào ô New Word và nghia ti?ng vi?t vào ô Translate sau dó nh?n add.
+- Cách s?a t? : 
+Nh?n t? ti?ng anh c?n s?a vào ô New Word và nghia ti?ng vi?t vào ô Translate sau dó nh?n add.
+- Cách xóa t? :
+Tìm t? c?n xóa sau dó nh?n vô thùng rác
+

@@ -1,0 +1,21 @@
+ok	duoc
+like	thich
+love	yeu
+lovely	dang yeu
+lovelike	yeu thich
+dog	 cho
+cat	meo
+tiger	ho
+water	nuoc
+one	so 1
+two	so 2
+three	so 3
+four	so 4
+five	so 5
+kute	de thuong
+fire	lua
+map	ban do
+screen	man hinh
+music	nhac
+camera	chup anh
+settings	cai dat
